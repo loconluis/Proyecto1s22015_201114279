@@ -9,13 +9,14 @@ package Estructuras.Choferes;
  *
  * @author Luis Locon
  */
-public class AVLNodo {
+public class AVLNodoChf {
     int id;
     String nombre, apellido, pass;
     int altura;
-    AVLNodo izquierda, derecha;
+    AVLNodoChf izquierda;
+    AVLNodoChf derecha;
     
-    public AVLNodo(int id, String nombre, String apellido, String pass){
+    public AVLNodoChf(int id, String nombre, String apellido, String pass){
         this.id=id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -65,19 +66,19 @@ public class AVLNodo {
         this.altura = altura;
     }
 
-    public AVLNodo getIzquierda() {
+    public AVLNodoChf getIzquierda() {
         return izquierda;
     }
 
-    public void setIzquierda(AVLNodo izquierda) {
+    public void setIzquierda(AVLNodoChf izquierda) {
         this.izquierda = izquierda;
     }
 
-    public AVLNodo getDerecha() {
+    public AVLNodoChf getDerecha() {
         return derecha;
     }
 
-    public void setDerecha(AVLNodo derecha) {
+    public void setDerecha(AVLNodoChf derecha) {
         this.derecha = derecha;
     }
     

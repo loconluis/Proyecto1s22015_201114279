@@ -10,7 +10,7 @@ package Estructuras.Choferes;
  * @author Luis Locon
  */
 public class AVLArbol {
-    AVLNodo raiz;
+    AVLNodoChf raiz;
     //String cadena="";
     int contador;
     
@@ -21,7 +21,7 @@ public class AVLArbol {
     
     public void insertarChofer(int id, String nombre, String apellido, String pass){
         
-        AVLNodo nuevo = new AVLNodo(id, nombre, apellido, pass);
+        AVLNodoChf nuevo = new AVLNodoChf(id, nombre, apellido, pass);
         
         if(raiz == null){
             raiz = insertarNodo(nuevo, raiz);
@@ -30,7 +30,7 @@ public class AVLArbol {
         }
     }
 
-    private AVLNodo insertarNodo(AVLNodo nuevo, AVLNodo raiz) {
+    private AVLNodoChf insertarNodo(AVLNodoChf nuevo, AVLNodoChf raiz) {
         if (raiz == null){
             raiz = nuevo;
             System.out.println("SubRaiz: "+ raiz.id);
@@ -71,7 +71,7 @@ public class AVLArbol {
     }
    
     public boolean BuscarChofer(int id){
-        AVLNodo eslabon;
+        AVLNodoChf eslabon;
         
         eslabon = buscarNodo(raiz, id);
         
@@ -82,7 +82,7 @@ public class AVLArbol {
         }
     }
     
-    private AVLNodo buscarNodo(AVLNodo raiz, int id) {
+    private AVLNodoChf buscarNodo(AVLNodoChf raiz, int id) {
         if(raiz !=null){
             if(raiz.id == id){
                 return raiz;
@@ -95,7 +95,7 @@ public class AVLArbol {
         return null;
     }
     
-    private int altura(AVLNodo raiz) {
+    private int altura(AVLNodoChf raiz) {
         if (raiz == null){
             return 0;
         }else {
@@ -109,7 +109,7 @@ public class AVLArbol {
         }
     }
 
-    private AVLNodo doubleLeft(AVLNodo t, AVLNodo taux) {
+    private AVLNodoChf doubleLeft(AVLNodoChf t, AVLNodoChf taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -120,7 +120,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo leftandRight(AVLNodo t, AVLNodo taux, AVLNodo tnew) {
+    private AVLNodoChf leftandRight(AVLNodoChf t, AVLNodoChf taux, AVLNodoChf tnew) {
         if(tnew.altura==-1){
             t.altura=1;
             taux.altura=0;
@@ -146,7 +146,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo doubleRight(AVLNodo t, AVLNodo taux) {
+    private AVLNodoChf doubleRight(AVLNodoChf t, AVLNodoChf taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -157,7 +157,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo rightandLeft(AVLNodo t, AVLNodo taux, AVLNodo tnew) {
+    private AVLNodoChf rightandLeft(AVLNodoChf t, AVLNodoChf taux, AVLNodoChf tnew) {
         if(tnew.altura==-1){
             t.altura=0;
             taux.altura=1;

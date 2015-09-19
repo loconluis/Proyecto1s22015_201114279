@@ -9,20 +9,20 @@ package Estructuras.Admin;
  *
  * @author Luis Locon
  */
-public class AVLArbol {
+public class AVLArbolAdmin {
     
-    AVLNodo raiz;
+    AVLNodoAdm raiz;
     //String cadena="";
     int contador;
     
-    public AVLArbol(){
+    public AVLArbolAdmin(){
         this.raiz=null;
         this.contador=0;
     }
     
     public void insertarAdmin(String correo, String pass){
         
-        AVLNodo nuevo = new AVLNodo(correo, pass);
+        AVLNodoAdm nuevo = new AVLNodoAdm(correo, pass);
         
         if(raiz == null){
             raiz = insertarNodo(nuevo, raiz);
@@ -31,7 +31,7 @@ public class AVLArbol {
         }
     }
 
-    private AVLNodo insertarNodo(AVLNodo nuevo, AVLNodo raiz) {
+    private AVLNodoAdm insertarNodo(AVLNodoAdm nuevo, AVLNodoAdm raiz) {
         if (raiz == null){
             raiz = nuevo;
             System.out.println("SubRaiz: "+ raiz.correo);
@@ -70,7 +70,7 @@ public class AVLArbol {
     }
    
     public boolean BuscarAdmin(String correo){
-        AVLNodo eslabon;
+        AVLNodoAdm eslabon;
         
         eslabon = buscarNodo(raiz, correo);
         
@@ -81,7 +81,7 @@ public class AVLArbol {
         }
     }
     
-    private AVLNodo buscarNodo(AVLNodo raiz, String correo) {
+    private AVLNodoAdm buscarNodo(AVLNodoAdm raiz, String correo) {
         if(raiz !=null){
             if(raiz.correo.compareTo(correo)==0){
                 return raiz;
@@ -94,7 +94,7 @@ public class AVLArbol {
         return null;
     }
     
-    private int altura(AVLNodo raiz) {
+    private int altura(AVLNodoAdm raiz) {
         if (raiz == null){
             return 0;
         }else {
@@ -108,7 +108,7 @@ public class AVLArbol {
         }
     }
 
-    private AVLNodo doubleLeft(AVLNodo t, AVLNodo taux) {
+    private AVLNodoAdm doubleLeft(AVLNodoAdm t, AVLNodoAdm taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -119,7 +119,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo leftandRight(AVLNodo t, AVLNodo taux, AVLNodo tnew) {
+    private AVLNodoAdm leftandRight(AVLNodoAdm t, AVLNodoAdm taux, AVLNodoAdm tnew) {
         if(tnew.altura==-1){
             t.altura=1;
             taux.altura=0;
@@ -145,7 +145,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo doubleRight(AVLNodo t, AVLNodo taux) {
+    private AVLNodoAdm doubleRight(AVLNodoAdm t, AVLNodoAdm taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -156,7 +156,7 @@ public class AVLArbol {
         return t;
     }
 
-    private AVLNodo rightandLeft(AVLNodo t, AVLNodo taux, AVLNodo tnew) {
+    private AVLNodoAdm rightandLeft(AVLNodoAdm t, AVLNodoAdm taux, AVLNodoAdm tnew) {
         if(tnew.altura==-1){
             t.altura=0;
             taux.altura=1;

@@ -8,7 +8,10 @@ package WebServices;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-
+import Estructuras.Admin.*;
+import Estructuras.Choferes.*;
+import Estructuras.EstacionC.*;
+import Estructuras.ListaRutasBuses.*;
 /**
  *
  * @author Luis Locon
@@ -16,11 +19,33 @@ import javax.jws.WebParam;
 @WebService(serviceName = "wsTransApp")
 public class wsTransApp {
 
+    AVLArbolAdmin admtree = new AVLArbolAdmin();
+    
+    
+    
     /**
-     * This is a sample web service operation
+     * Web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "Validar")
+    public String Validar(@WebParam(name = "id") String id, @WebParam(name = "pass") String pass, @WebParam(name = "tipo") String tipo) {
+        if(id.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("pass") && tipo.equalsIgnoreCase("administrador")){
+            return "Webmaster";
+        }
+        else{
+            AVLNodoAdm adm=null;
+            AVLNodoChf chf = null;
+            AVLCenterE ce = null;
+            AVLNodoEG eg = null;
+            switch(tipo){
+                case "administrador":
+                    adm = admtree.BuscarAdmin(id);
+                    
+                    
+            
+            }
+        
+        }
+        
+        return null;
     }
 }

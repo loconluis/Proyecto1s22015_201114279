@@ -9,14 +9,14 @@ package Estructuras.Admin;
  *
  * @author Luis Locon
  */
-public class AVLNodo {
+public class AVLNodoAdm {
    
     String correo, pass;
-    AVLNodo izquierda;
-    AVLNodo derecho;
+    AVLNodoAdm izquierda;
+    AVLNodoAdm derecho;
     int altura;
     
-    public AVLNodo(String correo, String pass){
+    public AVLNodoAdm(String correo, String pass){
         this.correo=correo;
         this.pass=pass;
         this.izquierda=null;
@@ -40,19 +40,19 @@ public class AVLNodo {
         this.pass = pass;
     }
 
-    public AVLNodo getIzquierda() {
+    public AVLNodoAdm getIzquierda() {
         return izquierda;
     }
 
-    public void setIzquierda(AVLNodo izquierda) {
+    public void setIzquierda(AVLNodoAdm izquierda) {
         this.izquierda = izquierda;
     }
 
-    public AVLNodo getDerecho() {
+    public AVLNodoAdm getDerecho() {
         return derecho;
     }
 
-    public void setDerecho(AVLNodo derecho) {
+    public void setDerecho(AVLNodoAdm derecho) {
         this.derecho = derecho;
     }
 
