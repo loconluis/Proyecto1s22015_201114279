@@ -9,13 +9,13 @@ package Estructuras.EstacionC;
  *
  * @author Luis Locon
  */
-public class AVLCenterE {
+public class AVLNodoEG {
     int idestacion, nopersonas;
     int altura;
     
-    AVLCenterE izquierda, derecha;
+    AVLNodoEG izquierda, derecha;
     
-    public AVLCenterE(int idestacion, int nopersonas){
+    public AVLNodoEG(int idestacion, int nopersonas){
         this.idestacion= idestacion;
         this.nopersonas=nopersonas;
         this.izquierda= null;
@@ -47,19 +47,19 @@ public class AVLCenterE {
         this.altura = altura;
     }
 
-    public AVLCenterE getIzquierda() {
+    public AVLNodoEG getIzquierda() {
         return izquierda;
     }
 
-    public void setIzquierda(AVLCenterE izquierda) {
+    public void setIzquierda(AVLNodoEG izquierda) {
         this.izquierda = izquierda;
     }
 
-    public AVLCenterE getDerecha() {
+    public AVLNodoEG getDerecha() {
         return derecha;
     }
 
-    public void setDerecha(AVLCenterE derecha) {
+    public void setDerecha(AVLNodoEG derecha) {
         this.derecha = derecha;
     }
     

@@ -9,19 +9,19 @@ package Estructuras.EstacionC;
  *
  * @author Luis Locon
  */
-public class AVLArbolCE {
-    AVLCenterE raiz;
+public class AVLArbolEG {
+    AVLNodoEG raiz;
     //String cadena="";
     int contador;
     
-    public AVLArbolCE(){
+    public AVLArbolEG(){
         this.raiz=null;
         this.contador=0;
     }
     
     public void insertarChofer(int id, int personas){
         
-        AVLCenterE nuevo = new AVLCenterE(id, personas);
+        AVLNodoEG nuevo = new AVLNodoEG(id, personas);
         
         if(raiz == null){
             raiz = insertarNodo(nuevo, raiz);
@@ -30,7 +30,7 @@ public class AVLArbolCE {
         }
     }
 
-    private AVLCenterE insertarNodo(AVLCenterE nuevo, AVLCenterE raiz) {
+    private AVLNodoEG insertarNodo(AVLNodoEG nuevo, AVLNodoEG raiz) {
         if (raiz == null){
             raiz = nuevo;
             System.out.println("SubRaiz: "+ raiz.idestacion);
@@ -71,7 +71,7 @@ public class AVLArbolCE {
     }
    
     public boolean BuscarChofer(int id){
-        AVLCenterE eslabon;
+        AVLNodoEG eslabon;
         
         eslabon = buscarNodo(raiz, id);
         
@@ -82,7 +82,7 @@ public class AVLArbolCE {
         }
     }
     
-    private AVLCenterE buscarNodo(AVLCenterE raiz, int id) {
+    private AVLNodoEG buscarNodo(AVLNodoEG raiz, int id) {
         if(raiz !=null){
             if(raiz.idestacion == id){
                 return raiz;
@@ -95,7 +95,7 @@ public class AVLArbolCE {
         return null;
     }
     
-    private int altura(AVLCenterE raiz) {
+    private int altura(AVLNodoEG raiz) {
         if (raiz == null){
             return 0;
         }else {
@@ -109,7 +109,7 @@ public class AVLArbolCE {
         }
     }
 
-    private AVLCenterE doubleLeft(AVLCenterE t, AVLCenterE taux) {
+    private AVLNodoEG doubleLeft(AVLNodoEG t, AVLNodoEG taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -120,7 +120,7 @@ public class AVLArbolCE {
         return t;
     }
 
-    private AVLCenterE leftandRight(AVLCenterE t, AVLCenterE taux, AVLCenterE tnew) {
+    private AVLNodoEG leftandRight(AVLNodoEG t, AVLNodoEG taux, AVLNodoEG tnew) {
         if(tnew.altura==-1){
             t.altura=1;
             taux.altura=0;
@@ -146,7 +146,7 @@ public class AVLArbolCE {
         return t;
     }
 
-    private AVLCenterE doubleRight(AVLCenterE t, AVLCenterE taux) {
+    private AVLNodoEG doubleRight(AVLNodoEG t, AVLNodoEG taux) {
         t.altura=0;
         taux.altura=0;
         
@@ -157,7 +157,7 @@ public class AVLArbolCE {
         return t;
     }
 
-    private AVLCenterE rightandLeft(AVLCenterE t, AVLCenterE taux, AVLCenterE tnew) {
+    private AVLNodoEG rightandLeft(AVLNodoEG t, AVLNodoEG taux, AVLNodoEG tnew) {
         if(tnew.altura==-1){
             t.altura=0;
             taux.altura=1;
